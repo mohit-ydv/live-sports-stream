@@ -55,9 +55,6 @@ matchRouter.post('/', async (req, res) => {
 
     return res.status(201).json({ data: event });
   } catch (e) {
-    // Prefer meaningful error output
-    const message = e?.message || 'Unknown error';
-    const code = e?.code; // pg error code if present
-    return res.status(500).json({ error: 'Failed to create match.', details: message, code });
+      return res.status(500).json({ error: 'Failed to create match.' });
   }
 });
